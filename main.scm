@@ -2,7 +2,7 @@
 (console-log "ok")
 (define helloworld (string->list "今日は世界\nこの手紙はあなたに見えているでしょうか？"))
 (define sec 0.25)
-(define (type-text text) (if (null? text) (newline) (begin (display (car text)) (type-text (cdr text)))))
+(define (type-text text) (if (null? text) (newline) (begin (sleep sec) (display (car text)) (type-text (cdr text)))))
 (map type-text helloworld)
 (newline)
 (define user-msg (read (current-input-port)))
