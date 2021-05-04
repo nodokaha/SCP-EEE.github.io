@@ -6,5 +6,7 @@
 (map type-text helloworld)
 (newline)
 (define user-msg (read (current-input-port)))
+(display user-msg)
+(newline)
 (cond ((= uesr-msg "はい") (display "そうですか"))
       ((= uesr-msg "いいえ") (display "…")))
