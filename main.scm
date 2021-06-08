@@ -24,6 +24,8 @@
 (type-text "17番目のフィボナッチ数列の数はいくつですか？")
 (newline)
 (define user-msg (symbol->string (read (current-input-port))))
+(display user-msg)
+(newline)
 (cond ((string=? user-msg "はい?") (type-text "よかった"))
       ((string=? user-msg "わかんねえよ") (type-text "..."))
       ((string=? user-msg (number->string (fib 17)))(type-text "ようこそ、私のサイトへ")))
