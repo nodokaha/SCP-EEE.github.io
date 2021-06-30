@@ -1,0 +1,27 @@
+;;; -*- scheme -*-
+
+(use-modules (srfi srfi-41)
+	     (srfi srfi-19)
+             (haunt utils))
+
+(define fib
+  (stream-cons 0 (stream-cons 1 (stream-map + fib (stream-cdr fib)))))
+
+(define count 30)
+
+`((title . "Hello, world!")
+  (date . ,(time-utc->date (current-time)))
+  (tags "hello" "world")
+  (summary . "First post")
+  (content
+   ((h2 "はじめまして")
+    (p "ここは、私の作品を解説する場所です。")
+    (p "SXML is cool because you can evaluate Scheme code in your blog
+posts.  Here are the first "
+       ,count
+       " fibonacci numbers, computed with SRFI-41!")
+    (pre ,(object->string
+           (stream->list
+            (stream-take count fib))))
+    (p "Guile Scheme is great, eh?")
+    (img (@ (src "/images/guile-banner.small.png"))))))
