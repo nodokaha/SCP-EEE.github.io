@@ -3,13 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <title>SCP-EEE 収容オブジェクト郡</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="jquery.terminal.min.css">
   </head>
   <body>
-    <div id="bs-console">
-    </div>
-    <script src="biwascheme.js">
-      (load "main.scm")
+    <div id="term"></div>
+    <script>
+      jQuery(function($, undefined) {
+	  $('#term').terminal(function(command) {
+              if (command !== '') {
+		  var result = window.eval(command);
+		  if (result != undefined) {
+                      this.echo(String(result));
+		  }
+              }
+	  }, {
+              greetings: 'Javascript Interpreter',
+              name: 'js_demo',
+              height: 200,
+              width: 450,
+              prompt: 'js> '
+	  });
+      });
     </script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery.terminal.min.js"></script>
   </body>
 </html>
