@@ -2,7 +2,7 @@
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 (display helloworld)
 
-(define (user-input) (let ((msg (read (current-input-port)))) (if (symbol? msg) (symbol->string msg) (begin (display "Error") (user-msg)))))
+(define (user-input) (let ((msg (read (current-input-port)))) (if (symbol? msg) (symbol->string msg) (begin (display "Error") (user-input)))))
 
 (define user-msg (user-input))
 (console-log user-msg)
