@@ -149,6 +149,10 @@ jQuery(document).ready(function($, undefined) {
        term.error(e.message);
     });
 
+    bscheme.evaluate('(load "main.scm")', function(result) {
+    	console.log(result);
+    });
+
     BiwaScheme.Console.puts = function(string) {
         term.echo(string);
     };
