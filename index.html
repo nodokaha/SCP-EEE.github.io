@@ -1,31 +1,18 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>SCP-EEE 収容オブジェクト郡</title>
-    <link rel="stylesheet" href="jquery.terminal.min.css">
-  </head>
-  <body>
-    <div id="term"></div>
-    <script>
-      jQuery(function($, undefined) {
-	  $('#term').terminal(function(command) {
-              if (command !== '') {
-		  var result = window.eval(command);
-		  if (result != undefined) {
-                      this.echo(String(result));
-		  }
-              }
-	  }, {
-              greetings: 'Javascript Interpreter',
-              name: 'js_demo',
-              height: 200,
-              width: 450,
-              prompt: 'js> '
-	  });
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-    <script src="js/jquery.terminal-2.27.1.min.js"></script>
-  </body>
+	<head>
+		<title>My web</title>
+		<link href="jquery.css" rel="stylesheet" type="text/css">
+		<link href="prism-coy.css" rel="stylesheet" type="text/css">
+		<link href="screen.css" rel="stylesheet" type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<div id="term"></div>
+	</body>
+<script src="biwascheme.js" type="text/javascript"></script>
+<script src="jquery.terminal.js" type="text/javascript"></script>
+<script src="prism.js" type="text/javascript"></script>
+<script src="prism.scheme.js" type="text/javascript"></script>
+<script src="jquery.terminal.prism.js" type="text/javascript"></script>
+<script src="biwascheme.terminal.js" type="text/javascript"></script>
 </html>
