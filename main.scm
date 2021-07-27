@@ -2,7 +2,11 @@
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 (display helloworld)
 
-(define (user-input) (let ((msg (read (current-input-port)))) (if (symbol? msg) (symbol->string msg) (begin (display "Error") (user-input)))))
+(define (user-input) 
+  (let ((msg (read (current-input-port)))) 
+                       (if (symbol? msg) (symbol->string msg) 
+                           (if (number? msg) (number->string msg) 
+                               (begin (display "Error") (user-input))))))
 
 (define user-msg (user-input))
 (console-log user-msg)
@@ -28,8 +32,8 @@
 (define user-msg (user-input))
 (display user-msg)
 
-(cond ((string=? user-msg "はい?") (display "わかりませんか？"))
+(cond ((string=? user-msg "はい?") (begin (display "わかりませんか？") (display "ですよねぇ") (newline) (display "ようこそ、私のサイトへ")))
       ((string=? user-msg "わかんねえよ") (display "..."))
       ((string=? user-msg (number->string (fib 17)))(display "ようこそ、私のサイトへ"))
-      (else (display "Bye")))
+      (else (display "残念ですが、貴方は私のサイトに入る資格がなかったようです。また、お越しください。...嘘です。")))
 
