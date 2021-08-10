@@ -1,4 +1,11 @@
 (define (fib x) (letrec ((fib-iter (lambda (n f1 f2) (if (< n 1) f1 (fib-iter (- n 1) f2 (+ f1  f2))))))(fib-iter x 0 1)))
+
+(define start-text '("初めまして、ああ、いや、私にとってはいつも初めましてなんですけど。" "どこかでお会いしましたかね？…どうでもいいんですけど。" "ようこそ、ようこそ。趣味の悪い監獄へ…嘘です。" "今日はとても良い日ですね。" "またですか？…ああいや、こっちの話です。" "飽きたら言ってください。新しい自分を発注しなきゃいけないので。…なんてね。" "どうぞ、ユーザー。ここでは暇潰しが出来ますよ。人によってはですが。"))
+
+(define blog "https://SCP-EEE.github.io/blog.html")
+
+(define (help) (display "blog: ブログサイトのURIを出力します。するだけです。\n(fib n): フィボナッチ数列のn番目を計算してくれます。\n(tictactoe)： 良かったですね。○×ゲームで遊べますよ。さらに独り用です。\n(help)： これです。"))
+
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 (display helloworld)
 
@@ -35,5 +42,7 @@
 (cond ((string=? user-msg "はい?") (begin (display "わかりませんか？") (display "ですよねぇ") (newline) (display "ようこそ、私のサイトへ")))
       ((string=? user-msg "わかんねえよ") (display "..."))
       ((string=? user-msg (number->string (fib 17)))(display "ようこそ、私のサイトへ"))
-      (else (display "残念ですが、貴方は私のサイトに入る資格がなかったようです。また、お越しください。...嘘です。")))
+      (else (display "残念ですが、貴方は私のサイトに入る資格がなかったようです。\nまた、お越しください。...嘘です。")))
 
+(display (list-ref start-text (random-integer (length start-text))))
+(display "何をすればいいか分からなかったら(help)と入力してくださいね。")
