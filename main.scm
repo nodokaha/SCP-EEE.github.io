@@ -15,10 +15,10 @@
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 (display helloworld)
 
-(define (tictactoe) (display " | | \n-----\n | | \n------ | | \n1~9を入力してください。")
-  (let loop ((user-msg user-input)(user-mark '())(flag 0))
-    (if (random-integer 1)
-    (cond ((= user-msg "1") (loop (user-input) (list user-mark 1) 
+;(define (tictactoe) (display " | | \n-----\n | | \n------ | | \n1~9を入力してください。")
+;  (let loop ((user-msg user-input)(user-mark '())(flag 0))
+;    (if (random-integer 1)
+;    (cond ((= user-msg "1") (loop (user-input) (list user-mark 1) 
 
 (define user-msg (user-input))
 (console-log user-msg)
