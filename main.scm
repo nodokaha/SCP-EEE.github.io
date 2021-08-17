@@ -2,6 +2,12 @@
 
 (define start-text '("初めまして、ああ、いや、私にとってはいつも初めましてなんですけど。" "どこかでお会いしましたかね？…どうでもいいんですけど。" "ようこそ、ようこそ。趣味の悪い監獄へ…嘘です。" "今日はとても良い日ですね。" "またですか？…ああいや、こっちの話です。" "飽きたら言ってください。新しい自分を発注しなきゃいけないので。…なんてね。" "どうぞ、ユーザー。ここでは暇潰しが出来ますよ。人によってはですが。"))
 
+(define (user-input) 
+  (let ((msg (read (current-input-port)))) 
+                       (if (symbol? msg) (symbol->string msg) 
+                           (if (number? msg) (number->string msg) 
+                               (begin (display "Error") (user-input))))))
+
 (define blog "https://SCP-EEE.github.io/blog.html")
 
 (define (help) (display "blog: ブログサイトのURIを出力します。するだけです。\n(fib n): フィボナッチ数列のn番目を計算してくれます。\n(tictactoe)： 良かったですね。○×ゲームで遊べますよ。さらに独り用です。\n(help)： これです。"))
@@ -9,11 +15,10 @@
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 (display helloworld)
 
-(define (user-input) 
-  (let ((msg (read (current-input-port)))) 
-                       (if (symbol? msg) (symbol->string msg) 
-                           (if (number? msg) (number->string msg) 
-                               (begin (display "Error") (user-input))))))
+(define (tictactoe) (display " | | \n-----\n | | \n------ | | \n1~9を入力してください。")
+  (let loop ((user-msg user-input)(user-mark '())(flag 0))
+    (if (random-integer 1)
+    (cond ((= user-msg "1") (loop (user-input) (list user-mark 1) 
 
 (define user-msg (user-input))
 (console-log user-msg)
