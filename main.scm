@@ -23,12 +23,13 @@
 
 (define blog "https://SCP-EEE.github.io/blog.html")
 
-(define (talk) (display "私は、いえ、自己紹介はいいでしょう。")
+(define (talk)
   (let ((about-me '("私のことはいいでしょう。\n貴方について教えてください。" "答える必要が、ありますか？" "そうですねえ、それはもうちょっと。\n後でにしましょう？" "私から何を得ると？\nそれにそれ、知りたいですか？"))
 	(talking-you '("へぇ" "あぁ、それで、それで？\n…すいません。聞いてませんでした。" "興味深いですね。\nえ、いや私のアホ毛に言ったんですよ。" "え？それ、そんな真剣な話ですか？" "分からないですね" "…結局のところ？" "飽きました。私が。" ""))(display-talk (lambda (x) (display (list-ref x (random-integer (length x)))))))
-	(let loop ((user-msg '"")) (cond ((and (string=? user-msg "名前") (string=? user-msg "性別") (string=? user-msg "住所") (string=? user-msg "家族")) (display-talk about-me))
+	(let loop ((user-msg '"")) (cond ((or (string=? user-msg "名前") (string=? user-msg "性別") (string=? user-msg "住所") (string=? user-msg "家族")) (display-talk about-me))
 						  ((string=? user-msg "作者") (display "それはそれは、冷たい目をされた。"))
 						  ((string=? user-msg "さよなら")(display "お別れなんて、きっと出来ないですよ。"))
+					 	  ((string=? user-msg "") (display "私は、いえ、自己紹介はいいでしょう。"))
 						  (else (display-talk talking-you))) (if (string=? user-msg "q") (display "まあ、終わる方法くらい。\n気付きますか。") (loop (user-input))))))
 
 (define (help) (display "blog: ブログサイトのURIを出力します。するだけです。\n(fib n): フィボナッチ数列のn番目を計算してくれます。\n(tictactoe): 良かったですね。○×ゲームで遊べますよ。さらに独り用です。(まだ開発中ですけど)\n(talk): 私と話すことが出来ます。…すぐ飽きますよ。\n(help): これです。"))
