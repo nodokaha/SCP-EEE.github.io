@@ -79,7 +79,7 @@
 						  ((or (string=? user-msg "女?") (string=? user-msg "女？")) (display "その方が僕には価値がありますか？\n冗談ですよ。\n俺でも、私でも、…そして僕だとしても。\n貴方には関係ないです。"))
 						  ((string=? user-msg "つまらない") (display "貴重なご感想どうも。\n…辛いことあったら、慰めるくらいはしますよ。\nいえ、皮肉ですけど。"))
 						  ((or (string=? user-msg "慰めて") (string=? user-msg "慰めろ") (string=? user-msg "なんだお前")) (display "一般常識ですけど。\n感情の尖りは努力や悩みの表われです。\n世界の全て、あなたにとってどうでも良くないですか？\n自分の意見、言うだけ損かも知れませんよ。"))
-						  ((or (string=? user-msg "時計") (string=? user-msg "時間は?") (string=? user-msg "今、何時?") (string=? user-msg "いつ?")) (display (date->string (current-date))))
+						  ((or (string=? user-msg "時計") (string=? user-msg "時間は?") (string=? user-msg "今、何時?") (string=? user-msg "いつ?")(string=? user-msg "時間は？") (string=? user-msg "今、何時？") (string=? user-msg "いつ？") (display (date->string (current-date))))
 					 	  ((string=? user-msg "") (display "私は、いえ、自己紹介はいいでしょう。"))
 						  (else (display-talk talking-you)))
 	 (if (string=? user-msg "q") (display "まあ、終わる方法くらい。\n気付きますか。") (loop (user-input))))))
@@ -121,13 +121,9 @@
 
 (define (help)
   (display "blog: ブログサイトのURIを出力します。するだけです。")
-  (newline)
   (display "(tictactoe): 良かったですね。○×ゲームで遊べますよ。さらに独り用です。(まだ開発中ですけど)")
-  (newline)
   (display "(talk): 私と話すことが出来ます。…すぐ飽きますよ。")
-  (newline)
   (display "(trpg): テキストロールプレイングゲームです。SF系です。")
-  (newline)
   (display "(help): これです。"))
 
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")

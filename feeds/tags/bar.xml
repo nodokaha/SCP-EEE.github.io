@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>ようこそ</title><id>https://example.com/feeds/tags/bar.xml</id><subtitle>Tag: bar</subtitle><updated>2021-08-10T18:25:02Z</updated><link href="example.com/feeds/tags/bar.xml" rel="self" /><link href="example.com" /><entry><title>A Foo Walks Into a Bar</title><id>https://example.com/a-foo-walks-into-a-bar.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2015-04-11T20:00:00Z</updated><link href="https://example.com/a-foo-walks-into-a-bar.html" rel="alternate" /><summary type="html">&lt;p&gt;
-  This is an example using raw HTML, because Guile doesn't have a
-  Markdown parser.
-&lt;/p&gt;</summary></entry></feed>

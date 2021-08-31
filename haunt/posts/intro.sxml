@@ -12,16 +12,15 @@
 `((title . "Hello, world!")
   (date . ,(time-utc->date (current-time)))
   (tags "hello" "world")
-  (summary . "First post")
+  (summary . "First post?")
   (content
    ((h2 "はじめまして")
     (p "ここは、私の作品を解説する場所です。")
-    (p "SXML is cool because you can evaluate Scheme code in your blog
-posts.  Here are the first "
+    (p "もうひとつの初めましてと同様ただのサンプルです。"
        ,count
        " fibonacci numbers, computed with SRFI-41!")
     (pre ,(object->string
            (stream->list
             (stream-take count fib))))
-    (p "Guile Scheme is great, eh?")
-    (img (@ (src "/images/guile-banner.small.png"))))))
+    (p "私の姿?いちようこんなの書いてたよ。")
+    (img (@ (src "/images/scp-eee.jpg"))))))
