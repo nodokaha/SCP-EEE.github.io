@@ -84,7 +84,7 @@
 						  (else (display-talk talking-you)))
 	 (if (string=? user-msg "q") (display "まあ、終わる方法くらい。\n気付きますか。") (loop (user-input))))))
 
-(define (話しかけてくるSCP-EEE)
+(define (SCP-EEE)
   (let ((talk '("ねぇねぇ、僕のこと知りたい？\nそっかあ。…そっかあ。\nまた、今度。ね？"
 		"今日は空が綺麗だよ。\nきっと君の心も綺麗だね？\nどんな天気も、…綺麗なんだよ？"
 		"もっと、もっと遊ぼう？\n死んじゃうくらいまで。"
