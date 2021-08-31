@@ -120,13 +120,15 @@
     
 
 (define (help)
+(begin
   (display "blog: ブログサイトのURIを出力します。するだけです。")
   (display "(tictactoe): 良かったですね。○×ゲームで遊べますよ。さらに独り用です。(まだ開発中ですけど)")
   (display "(talk): 私と話すことが出来ます。…すぐ飽きますよ。")
   (display "(trpg): テキストロールプレイングゲームです。SF系です。")
-  (display "(help): これです。"))
+  (display "(help): これです。")))
 
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
+
 (display helloworld)
 
 (define user-msg (user-input))
