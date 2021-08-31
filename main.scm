@@ -4,10 +4,10 @@
 (define (tictactoe)
   (letrec
       ((number-sequence (lambda (x) (let loop ((n 0)) (cons n (if (<= x n) '() (loop (+ n 1)))))))
-	(print-game (lambda () (display "|-+-+-|") (newline)(let loop ((i game-index)) (begin (display "|") (display (car i)) (display "|") (display (cadr i)) (display "|") (display (caddr i))(display "|")(newline)(display "|-+-+-|") (newline)(if (null? (cdddr i)) #f (loop (cdddr i)))))))
-	(select-game-iter (lambda (x) (let loop ((i game-index)) (cons (if (number? (car i)) (if (= (car i) x) mark (car i)) (car i)) (if (null? (cdr i)) '() (loop (cdr i)))))))
-	(select-game (lambda (x) (set! game-index (select-game-iter x))))
-	(print-index (lambda () (filter number? (let loop ((n 0)) (cons (let ((i (list-ref game-index n))) (if (string=? (if (number? i) "" i)  mark) n '())) (if (= n 8) '() (loop (+ n 1)))))))))
+       (print-game (lambda () (display "|-+-+-|") (newline)(let loop ((i game-index)) (begin (display "|") (display (car i)) (display "|") (display (cadr i)) (display "|") (display (caddr i))(display "|")(newline)(display "|-+-+-|") (newline)(if (null? (cdddr i)) #f (loop (cdddr i)))))))
+       (select-game-iter (lambda (x) (let loop ((i game-index)) (cons (if (number? (car i)) (if (= (car i) x) mark (car i)) (car i)) (if (null? (cdr i)) '() (loop (cdr i)))))))
+       (select-game (lambda (x) (set! game-index (select-game-iter x))))
+       (print-index (lambda () (filter number? (let loop ((n 0)) (cons (let ((i (list-ref game-index n))) (if (string=? (if (number? i) "" i)  mark) n '())) (if (= n 8) '() (loop (+ n 1)))))))))
     (display "開発中")))
 
 (define (trpg)
@@ -43,9 +43,9 @@
 
 (define (user-input) 
   (let ((msg (read (current-input-port)))) 
-                       (if (symbol? msg) (symbol->string msg) 
-                           (if (number? msg) (number->string msg) 
-                               (begin (display "Error") (user-input))))))
+    (if (symbol? msg) (symbol->string msg) 
+        (if (number? msg) (number->string msg) 
+            (begin (display "Error") (user-input))))))
 
 (define blog "https://SCP-EEE.github.io/blog.html")
 
@@ -73,15 +73,15 @@
 				     (string=? user-msg "性別")
 				     (string=? user-msg "住所")
 				     (string=? user-msg "家族")) (display-talk about-me))
-						  ((string=? user-msg "作者") (display "それはそれは、冷たい目をされた。"))
-						  ((string=? user-msg "さよなら")(display "お別れなんて、きっと出来ないですよ。"))
-						  ((or (string=? user-msg "男?") (string=? user-msg "男？")) (display "そうだったら、どうします？\n…どっちだって、良くないですか？\nそれも私はそうであるべきでしょうか…。\nまあ、別に悩んでも…。"))
-						  ((or (string=? user-msg "女?") (string=? user-msg "女？")) (display "その方が僕には価値がありますか？\n冗談ですよ。\n俺でも、私でも、…そして僕だとしても。\n貴方には関係ないです。"))
-						  ((string=? user-msg "つまらない") (display "貴重なご感想どうも。\n…辛いことあったら、慰めるくらいはしますよ。\nいえ、皮肉ですけど。"))
-						  ((or (string=? user-msg "慰めて") (string=? user-msg "慰めろ") (string=? user-msg "なんだお前")) (display "一般常識ですけど。\n感情の尖りは努力や悩みの表われです。\n世界の全て、あなたにとってどうでも良くないですか？\n自分の意見、言うだけ損かも知れませんよ。"))
-						  ((or (string=? user-msg "時計") (string=? user-msg "時間は?") (string=? user-msg "今、何時?") (string=? user-msg "いつ?")(string=? user-msg "時間は？") (string=? user-msg "今、何時？") (string=? user-msg "いつ？") (display (date->string (current-date))))
-					 	  ((string=? user-msg "") (display "私は、いえ、自己紹介はいいでしょう。"))
-						  (else (display-talk talking-you)))
+				((string=? user-msg "作者") (display "それはそれは、冷たい目をされた。"))
+				((string=? user-msg "さよなら")(display "お別れなんて、きっと出来ないですよ。"))
+				((or (string=? user-msg "男?") (string=? user-msg "男？")) (display "そうだったら、どうします？\n…どっちだって、良くないですか？\nそれも私はそうであるべきでしょうか…。\nまあ、別に悩んでも…。"))
+				((or (string=? user-msg "女?") (string=? user-msg "女？")) (display "その方が僕には価値がありますか？\n冗談ですよ。\n俺でも、私でも、…そして僕だとしても。\n貴方には関係ないです。"))
+				((string=? user-msg "つまらない") (display "貴重なご感想どうも。\n…辛いことあったら、慰めるくらいはしますよ。\nいえ、皮肉ですけど。"))
+				((or (string=? user-msg "慰めて") (string=? user-msg "慰めろ") (string=? user-msg "なんだお前")) (display "一般常識ですけど。\n感情の尖りは努力や悩みの表われです。\n世界の全て、あなたにとってどうでも良くないですか？\n自分の意見、言うだけ損かも知れませんよ。"))
+				((or (string=? user-msg "時計") (string=? user-msg "時間は?") (string=? user-msg "今、何時?") (string=? user-msg "いつ?")(string=? user-msg "時間は？") (string=? user-msg "今、何時？") (string=? user-msg "いつ？")) (display (date->string (current-date))))
+				((string=? user-msg "") (display "私は、いえ、自己紹介はいいでしょう。"))
+				(else (display-talk talking-you)))
 	 (if (string=? user-msg "q") (display "まあ、終わる方法くらい。\n気付きますか。") (loop (user-input))))))
 
 (define (SCP-EEE)
@@ -117,15 +117,15 @@
 		"遊んでいるだけ、そうだろう？"))
 	(display-talk (lambda (x) (display (list-ref x (random-integer (length x)))))))
     (display-talk talk)))
-    
+
 
 (define (help)
-(begin
-  (display "blog: ブログサイトのURIを出力します。するだけです。")
-  (display "(tictactoe): 良かったですね。○×ゲームで遊べますよ。さらに独り用です。(まだ開発中ですけど)")
-  (display "(talk): 私と話すことが出来ます。…すぐ飽きますよ。")
-  (display "(trpg): テキストロールプレイングゲームです。SF系です。")
-  (display "(help): これです。")))
+  (begin
+    (display "blog: ブログサイトのURIを出力します。するだけです。")
+    (display "(tictactoe): 良かったですね。○×ゲームで遊べますよ。さらに独り用です。(まだ開発中ですけど)")
+    (display "(talk): 私と話すことが出来ます。…すぐ飽きますよ。")
+    (display "(trpg): テキストロールプレイングゲームです。SF系です。")
+    (display "(help): これです。")))
 
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 
