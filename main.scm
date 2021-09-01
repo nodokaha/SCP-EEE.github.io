@@ -23,6 +23,17 @@
 
 (define start-text
   '("今日を貴方が忘れない保証がない。\nああ、いや、ちょっとポエムを考えてみたくて。"
+    "Hello, user.\nYou're welcome."
+    "I love you.\n...joke."
+    "I can't understand you.\ntoo you?"
+    "Hey!Hey!.\nplease, call me."
+    "Are you japanese?\nLet's see, I don't need you're answer."
+    "OK, It is happy day.\n...happy...day."
+    "Ah? I wrong?\nYes. I can't speak english."
+    "Sing song.\nSing song."
+    "Onii-chan.\n...!?\nPlease, forget!"
+    "I don't know many english words.\nIf you are developer, please write me(code)."
+    "Fix!Fix!Fix me."
     "クローンでも元と同じ自我ってありますかね？\n…私の桜の木の話ですよ？"
     "今日が何の日か知ってますか？\n知ってたら誰かに自慢できますね。"
     "性的な目ってありますよね。\nあれ、本能なんでしょうか？\nえ？そもそも性別はどっちって？\n…さあ？どっちでしょう？"
