@@ -8,6 +8,7 @@
              (haunt site))
 
 (site #:title "ようこそ"
+      #:domain "SCP-EEE.github.io"
       #:default-metadata
       '((author . "SCP-EEE")
         (email  . "scpeee@wail.ch"))

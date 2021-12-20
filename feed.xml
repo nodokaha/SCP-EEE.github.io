@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>ようこそ</title><subtitle>Recent Posts</subtitle><updated>2021-08-31T23:26:40+0900</updated><link href="example.com/feed.xml" rel="self" /><link href="example.com" /><entry><title>Hello, world!</title><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-08-31T23:26:40+0900</updated><link href="/hello-world.html" rel="alternate" /><summary type="html">&lt;h2&gt;はじめまして&lt;/h2&gt;&lt;p&gt;ここは、私の作品を解説する場所です。&lt;/p&gt;&lt;p&gt;もうひとつの初めましてと同様ただのサンプルです。30 fibonacci numbers, computed with SRFI-41!&lt;/p&gt;&lt;pre&gt;(0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229)&lt;/pre&gt;&lt;p&gt;私の姿?いちようこんなの書いてたよ。&lt;/p&gt;&lt;img src=&quot;/images/scp-eee.jpg&quot; /&gt;</summary></entry><entry><title>初めまして</title><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2020-08-31T10:48:00+0900</updated><link href="/初めまして.html" rel="alternate" /><summary type="html">&lt;p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>ようこそ</title><id>https://SCP-EEE.github.io/feed.xml</id><subtitle>Recent Posts</subtitle><updated>2021-12-21T00:10:58Z</updated><link href="SCP-EEE.github.io/feed.xml" rel="self" /><link href="SCP-EEE.github.io" /><entry><title>Hello, world!</title><id>https://SCP-EEE.github.io/hello-world.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-12-21T00:10:58Z</updated><link href="https://SCP-EEE.github.io/hello-world.html" rel="alternate" /><summary type="html">&lt;h2&gt;はじめまして&lt;/h2&gt;&lt;p&gt;ここは、私の作品を解説する場所です。&lt;/p&gt;&lt;p&gt;もうひとつの初めましてと同様ただのサンプルです。&lt;/p&gt;&lt;p&gt;30フィボナッチ数列だーーー!&lt;/p&gt;&lt;p&gt;(0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229)&lt;/p&gt;&lt;p&gt;私の姿?いちようこんなの書いてたよ。&lt;/p&gt;&lt;img src=&quot;/images/scp-eee.jpg&quot; /&gt;</summary></entry><entry><title>このサイトを作るのに使っているツールについて</title><id>https://SCP-EEE.github.io/このサイトを作るのに使っているツールについて.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-12-20T11:56:00Z</updated><link href="https://SCP-EEE.github.io/このサイトを作るのに使っているツールについて.html" rel="alternate" /><summary type="html">&lt;p&gt;
+  hauntと呼ばれる。
+&lt;/p&gt;&lt;p&gt;
+  guile方言schemeのブログライブラリツールを用いています。
+&lt;/p&gt;&lt;a href=&quot;https://dthompson.us/projects/haunt.html&quot;&gt;
+  https://dthompson.us/projects/haunt.html
+&lt;/a&gt;&lt;p&gt;
+  お化けがキュート。
+&lt;/p&gt;&lt;p&gt;
+  是非覗いてみて下さい。
+&lt;/p&gt;&lt;p&gt;
+  David Thompsonさんはその他にも凄いプロジェクトを作成していらっしゃいます。
+&lt;/p&gt;&lt;p&gt;
+  いつもお世話になってます。
+&lt;/p&gt;&lt;p&gt;
+  ということでこのサイトの根幹技術についての説明でした。
+&lt;/p&gt;</summary></entry><entry><title>初めまして</title><id>https://SCP-EEE.github.io/初めまして.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2020-08-31T10:48:00Z</updated><link href="https://SCP-EEE.github.io/初めまして.html" rel="alternate" /><summary type="html">&lt;p&gt;
   ここはいちようbolgらしいです。見たい人は見てください。
   いろんなことを説明してますが。意味はありません。
 &lt;/p&gt;</summary></entry></feed>

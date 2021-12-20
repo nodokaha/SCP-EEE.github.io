@@ -11,15 +11,15 @@
 
 `((title . "Hello, world!")
   (date . ,(time-utc->date (current-time)))
-  (tags "hello" "world")
+  (tags "first")
   (summary . "First post?")
   (content
    ((h2 "はじめまして")
     (p "ここは、私の作品を解説する場所です。")
-    (p "もうひとつの初めましてと同様ただのサンプルです。"
-       ,count
-       " fibonacci numbers, computed with SRFI-41!")
-    (pre ,(object->string
+    (p "もうひとつの初めましてと同様ただのサンプルです。")
+    (p ,count
+       "フィボナッチ数列だーーー!")
+    (p ,(object->string
            (stream->list
             (stream-take count fib))))
     (p "私の姿?いちようこんなの書いてたよ。")
