@@ -3,12 +3,20 @@
 ;;(define (tictactoe) (let ((game-index (number-sequence 8))(mark "○")) (begin (print-game) (select-game (read)) (let ((end-flag (end-game))) (cond ((= end-flag 0) (display "You're win!")) ((= end-flag 1) (display "You're lose!")) ((= end-flag 2) (display "draw!")) ((= end-flag 4) (tictactoe)))))))
 (define (tictactoe)
   (letrec
-      ((number-sequence (lambda (x) (let loop ((n 0)) (cons n (if (<= x n) '() (loop (+ n 1)))))))
+      ((number-sequence (lambda (x) (let loop ((n 0)) (cons n (if (<= x n) '() (loop (+ n 1))))))) (game-index (number-sequence 8)) 
        (print-game (lambda () (display "|-+-+-|") (newline)(let loop ((i game-index)) (begin (display "|") (display (car i)) (display "|") (display (cadr i)) (display "|") (display (caddr i))(display "|")(newline)(display "|-+-+-|") (newline)(if (null? (cdddr i)) #f (loop (cdddr i)))))))
-       (select-game-iter (lambda (x) (let loop ((i game-index)) (cons (if (number? (car i)) (if (= (car i) x) mark (car i)) (car i)) (if (null? (cdr i)) '() (loop (cdr i)))))))
-       (select-game (lambda (x) (set! game-index (select-game-iter x))))
-       (print-index (lambda () (filter number? (let loop ((n 0)) (cons (let ((i (list-ref game-index n))) (if (string=? (if (number? i) "" i)  mark) n '())) (if (= n 8) '() (loop (+ n 1)))))))))
-    (display "開発中")))
+       (select-game-iter (lambda (x mark) (let loop ((i game-index)) (cons (if (number? (car i)) (if (= (car i) x) mark (car i)) (car i)) (if (null? (cdr i)) '() (loop (cdr i)))))))
+       (select-game (lambda (x mark) (set! game-index (select-game-iter x mark))))
+       (print-index (lambda () (filter number? (let loop ((n 0)) (cons (let ((i (list-ref game-index n))) (if (string=? (if (number? i) "" i)  mark) n '())) (if (= n 8) '() (loop (+ n 1))))))))
+       (check-index (lambda (mark) (let loop ((index '()) (n 0)) (if (< n (length game-index)) (if (eq? mark (list-ref game-index n)) (loop (cons n index) (+ n 1)) (loop index (+ n 1))) index))))
+       (check-winner (call/cc (lambda (escape) (let loop ((index '((0 1 2) (3 4 5) (6 7 8) (0 4 8) (2 4 6) (0 3 6) (1 4 7) (2 5 8)))) (if (eq? (if (null? index) (escape #f) (car index)) (check-index "○")) (escape #t) (if (null? index) #f (loop (cdr index))))))))
+       (end? (lambda () (if check-winner #t #f)))
+       (npc-tone (lambda () (let ((void-index (filter number? game-index))) (select-game (list-ref void-index (random-integer (length void-index))) "×"))))
+       (print-end (lambda () (cond 
+			   ((= check-winner 'win) (display "you're win!"))
+			   ((= check-winner 'lose) (display "lose..."))
+			   ((= check-winner 'draw) (display "draw"))))))
+    (call/cc (lambda (return) (print-game) (display "試作中") (newline) (display "Please number:") (let loop ((user-input (read))) (begin (select-game user-input "○") (print-game) (newline) (display (check-index "○")) (newline) (npc-tone) (print-game) (newline) (if (end?) (return (display "end")) (loop (read)))))))))
 
 (define (trpg)
   (display "あなたはあなたでなかった。\n
