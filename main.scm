@@ -1,10 +1,12 @@
 (define (fib x) (letrec ((fib-iter (lambda (n f1 f2) (if (< n 1) f1 (fib-iter (- n 1) f2 (+ f1  f2))))))(fib-iter x 0 1)))
 
 ;;(define (tictactoe) (let ((game-index (number-sequence 8))(mark "○")) (begin (print-game) (select-game (read)) (let ((end-flag (end-game))) (cond ((= end-flag 0) (display "You're win!")) ((= end-flag 1) (display "You're lose!")) ((= end-flag 2) (display "draw!")) ((= end-flag 4) (tictactoe)))))))
+(define buffer (open-ouptut-string))
+(define (display-buffer x) (write x buffer))
 (define (tictactoe)
   (letrec
       ((number-sequence (lambda (x) (let loop ((n 0)) (cons n (if (<= x n) '() (loop (+ n 1))))))) (game-index (number-sequence 8)) 
-       (print-game (lambda () (display "|-+-+-|") (newline)(let loop ((i game-index)) (begin (display "|") (display (car i)) (display "|") (display (cadr i)) (display "|") (display (caddr i))(display "|")(newline)(display "|-+-+-|") (newline)(if (null? (cdddr i)) #f (loop (cdddr i)))))))
+       (print-game (lambda () (display-buffer "|-+-+-|") (newline)(let loop ((i game-index)) (begin (display-buffer "|") (display-buffer (car i)) (display-buffer "|") (display-buffer (cadr i)) (display-buffer "|") (display-buffer (caddr i))(display-buffer "|")(newline)(display-buffer "|-+-+-|") (newline)(if (null? (cdddr i)) #f (loop (cdddr i)))))))
        (select-game-iter (lambda (x mark) (let loop ((i game-index)) (cons (if (number? (car i)) (if (= (car i) x) mark (car i)) (car i)) (if (null? (cdr i)) '() (loop (cdr i)))))))
        (select-game (lambda (x mark) (set! game-index (select-game-iter x mark))))
        (print-index (lambda () (filter number? (let loop ((n 0)) (cons (let ((i (list-ref game-index n))) (if (string=? (if (number? i) "" i)  mark) n '())) (if (= n 8) '() (loop (+ n 1))))))))
@@ -13,10 +15,10 @@
        (end? (lambda () (if check-winner #t #f)))
        (npc-tone (lambda () (let ((void-index (filter number? game-index))) (select-game (list-ref void-index (random-integer (length void-index))) "×"))))
        (print-end (lambda () (cond 
-			   ((= check-winner 'win) (display "you're win!"))
-			   ((= check-winner 'lose) (display "lose..."))
-			   ((= check-winner 'draw) (display "draw"))))))
-    (call/cc (lambda (return) (print-game) (display "試作中") (newline) (display "Please number:") (let loop ((user-input (read))) (begin (select-game user-input "○") (print-game) (newline) (display (check-index "○")) (newline) (npc-tone) (print-game) (newline) (if (end?) (return (display "end")) (loop (read)))))))))
+			   ((= check-winner 'win) (display-buffer "you're win!"))
+			   ((= check-winner 'lose) (display-buffer "lose..."))
+			   ((= check-winner 'draw) (display-buffer "draw"))))))
+    (call/cc (lambda (return) (print-game) (display (get-output-string buffer)) (display "試作中") (newline) (display "Please number:") (let loop ((user-input (read))) (begin (select-game user-input "○") (print-game) (newline) (display (check-index "○")) (newline) (npc-tone) (print-game) (newline) (if (end?) (return (display "end")) (loop (read)))))))))
 
 (define (trpg)
   (display "あなたはあなたでなかった。\n
@@ -165,6 +167,11 @@
 	(display-talk (lambda (x) (display (list-ref x (random-integer (length x)))))))
     (display-talk talk)))
 
+(define (eip) (display "いや脆弱性を探さないで下さい。"))
+
+(define (date) (current-date))
+
+(define (python) (begin (display "まだやる気ないですけど") (display "scheme実装のpythonです。") (display "schemerにとってpythonは実装課題です。") (display "知らんけど")))
 
 (define (help)
   (begin
@@ -172,6 +179,8 @@
     (display "(tictactoe): 良かったですね。○×ゲームで遊べますよ。さらに独り用です。(まだ開発中ですけど)")
     (display "(talk): 私と話すことが出来ます。…すぐ飽きますよ。")
     (display "(trpg): テキストロールプレイングゲームです。SF系です。")
+    (display "(date): いや(current-date)使いましょうよ？")
+    (display "(python): python使いとは戦争です。使いますけど…。")
     (display "(help): これです。")))
 
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
@@ -183,8 +192,8 @@
 (display user-msg)
 
 (cond ((string=? user-msg "はい") (display "そうですか"))
-      ((string=? user-msg "いいえ") (display "..."))
-      (else (display "...")))
+      ((string=? user-msg "いいえ") (display "……えー。"))
+      (else (display "……次に進めますよ。")))
 
 (display "あなたにお願いしたいことがあります。")
 
@@ -194,8 +203,8 @@
 (display user-msg)
 
 (cond ((string=? user-msg "はい") (display "よかった"))
-      ((string=? user-msg "いいえ") (display "..."))
-      (else (display "...")))
+      ((string=? user-msg "いいえ") (display "……えーー。"))
+      (else (display "……無視させて頂きます。")))
 
 (display "17番目のフィボナッチ数列の数はいくつですか？")
 
@@ -203,7 +212,10 @@
 (display user-msg)
 
 (cond ((string=? user-msg "はい?") (begin (display "わかりませんか？") (display "ですよねぇ") (newline) (display "ようこそ、私のサイトへ")))
-      ((string=? user-msg "わかんねえよ") (display "..."))
+      ((string=? user-msg "わかんねえよ") (display "雑魚ですか？…失礼。"))
+      ((string=? user-msg "なんでだよ") (display "答えられないんですか？"))
+      ((string=? user-msg "答える義務がない") (display "それはそうですね。"))
+      ((string=? user-msg "答えは？") (display "…私にも分かりません。システムに聞いてください。"))
       ((string=? user-msg (number->string (fib 17)))(display "ようこそ、私のサイトへ"))
       (else (display "残念ですが、貴方は私のサイトに入る資格がなかったようです。\nまた、お越しください。...嘘です。")))
 
