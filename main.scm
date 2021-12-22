@@ -1,12 +1,12 @@
 (define (fib x) (letrec ((fib-iter (lambda (n f1 f2) (if (< n 1) f1 (fib-iter (- n 1) f2 (+ f1  f2))))))(fib-iter x 0 1)))
 
 ;;(define (tictactoe) (let ((game-index (number-sequence 8))(mark "○")) (begin (print-game) (select-game (read)) (let ((end-flag (end-game))) (cond ((= end-flag 0) (display "You're win!")) ((= end-flag 1) (display "You're lose!")) ((= end-flag 2) (display "draw!")) ((= end-flag 4) (tictactoe)))))))
-(define buffer (open-output-string))
-(define (display-buffer x) (write x buffer))
 (define (tictactoe)
   (letrec
-      ((number-sequence (lambda (x) (let loop ((n 0)) (cons n (if (<= x n) '() (loop (+ n 1))))))) (game-index (number-sequence 8)) 
-       (print-game (lambda () (display-buffer "|-+-+-|") (newline)(let loop ((i game-index)) (begin (display-buffer "|") (display-buffer (car i)) (display-buffer "|") (display-buffer (cadr i)) (display-buffer "|") (display-buffer (caddr i))(display-buffer "|")(newline)(display-buffer "|-+-+-|") (newline)(if (null? (cdddr i)) #f (loop (cdddr i)))))))
+      ((number-sequence (lambda (x) (let loop ((n 0)) (cons n (if (<= x n) '() (loop (+ n 1))))))) (game-index (number-sequence 8))
+       (buffer '())
+       (display-buffer (lambda (x) (set! buffer (cons x buffer))))
+       (print-game (lambda () (display-buffer "|---+---+---|\n") (display-buffer "\n")(let loop ((i game-index)) (begin (display-buffer "|") (display-buffer (car i)) (display-buffer "|") (display-buffer (cadr i)) (display-buffer "|") (display-buffer (caddr i))(display-buffer "|")(display-buffer "\n")(display-buffer "|---+---+---|\n") (display-buffer "\n")(if (null? (cdddr i)) #f (loop (cdddr i)))))))
        (select-game-iter (lambda (x mark) (let loop ((i game-index)) (cons (if (number? (car i)) (if (= (car i) x) mark (car i)) (car i)) (if (null? (cdr i)) '() (loop (cdr i)))))))
        (select-game (lambda (x mark) (set! game-index (select-game-iter x mark))))
        (print-index (lambda () (filter number? (let loop ((n 0)) (cons (let ((i (list-ref game-index n))) (if (string=? (if (number? i) "" i)  mark) n '())) (if (= n 8) '() (loop (+ n 1))))))))
@@ -14,11 +14,12 @@
        (check-winner (call/cc (lambda (escape) (let loop ((index '((0 1 2) (3 4 5) (6 7 8) (0 4 8) (2 4 6) (0 3 6) (1 4 7) (2 5 8)))) (if (eq? (if (null? index) (escape #f) (car index)) (check-index "○")) (escape #t) (if (null? index) #f (loop (cdr index))))))))
        (end? (lambda () (if check-winner #t #f)))
        (npc-tone (lambda () (let ((void-index (filter number? game-index))) (select-game (list-ref void-index (random-integer (length void-index))) "×"))))
+       (game-print (lambda () (begin (display (reverse buffer)) (set! buffer '()))))
        (print-end (lambda () (cond 
 			   ((= check-winner 'win) (display-buffer "you're win!"))
 			   ((= check-winner 'lose) (display-buffer "lose..."))
 			   ((= check-winner 'draw) (display-buffer "draw"))))))
-    (call/cc (lambda (return) (print-game) (display (get-output-string buffer)) (display "試作中") (newline) (display "Please number:") (let loop ((user-input (read))) (begin (select-game user-input "○") (print-game) (newline) (display (check-index "○")) (newline) (npc-tone) (print-game) (newline) (if (end?) (return (display "end")) (loop (read)))))))))
+    (call/cc (lambda (return) (print-game) (display-buffer "試作中\n") (display-buffer "Please number:") (game-print) (let loop ((user-input (read))) (begin (select-game user-input "○") (print-game) (display-buffer (check-index "○")) (display-buffer "\n") (npc-tone) (print-game) (game-print) (if (end?) (return (display "end")) (loop (read)))))))))
 
 (define (trpg)
   (display "あなたはあなたでなかった。\n
