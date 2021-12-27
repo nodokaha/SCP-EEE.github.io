@@ -20,7 +20,9 @@
 			   ((= check-winner 'lose) (display-buffer "lose..."))
 			   ((= check-winner 'draw) (display-buffer "draw"))))))
     (call/cc (lambda (return) (print-game) (display-buffer "試作中\n") (display-buffer "Please number:") (game-print) (let loop ((user-input (read))) (begin (select-game user-input "○") (print-game) (display-buffer (check-index "○")) (display-buffer "\n") (npc-tone) (print-game) (game-print) (if (end?) (return (display "end")) (loop (read)))))))))
-
+(define music (js-new "Audio" "tap.mp3"))
+(define (music-play) (begin (js-invoke music "play") (js-set! music "loop" #t)))
+(define (music-pause) (js-invoke music "pause"))
 (define (trpg)
   (display "あなたはあなたでなかった。\n
 彼女は彼女でなかった。\n
@@ -202,6 +204,8 @@
     (display "(python): python使いとは戦争です。使いますけど…。")
     (display "(todo): やりたいことはちゃんと文字にしておくもんです")
     (display "(つまんない): 言いたいことは分かります。")
+    (display "(music-play): bgmっぽいのが再生されます。癒されて下さい。")
+    (display "(music-pause): うるさいから止めるんですね…ひとでなし！")
     (display "(help): これです。")))
 
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
