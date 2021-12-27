@@ -141,7 +141,7 @@ function indent(code, level, offset) {
 //--------------------------------------------------------------------------
 jQuery(document).ready(function($, undefined) {
     $.terminal.syntax("scheme");
-    var prompt = 'biwascheme> ';
+    var prompt = 'SRRRS> ';
     //NOTE: $ is jQuery in this scope
     var trace = false;
     var bscheme = new BiwaScheme.Interpreter(function(e, state) {
@@ -272,7 +272,7 @@ jQuery(document).ready(function($, undefined) {
         prompt: prompt
     });
     // we don't want formatting on version number
-    term.echo('BiwaScheme Interpreter version ' + BiwaScheme.Version, {
+    term.echo('こんにちは ユーザー！ここは仮想研究所です。\nこれはBiwaSchemeによって成り立っています。versionは' + BiwaScheme.Version, {
         formatters: false
     });
     // run trace mode
