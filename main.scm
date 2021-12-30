@@ -23,6 +23,8 @@
 (define music (js-new "Audio" "audio/tap.mp3"))
 (define (music-play) (begin (js-invoke music "play") (js-set! music "loop" #t)))
 (define (music-pause) (js-invoke music "pause"))
+(define canvas (js-eval "document.getElementById('canvas')"))
+(define ctx (js-invoke canvas "getContext" "2d"))
 (define (trpg)
   (display "あなたはあなたでなかった。\n
 彼女は彼女でなかった。\n
