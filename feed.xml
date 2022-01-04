@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>ようこそ</title><id>https://SCP-EEE.github.io/feed.xml</id><subtitle>Recent Posts</subtitle><updated>2021-12-27T14:34:37Z</updated><link href="SCP-EEE.github.io/feed.xml" rel="self" /><link href="SCP-EEE.github.io" /><entry><title>Hello, markdown!</title><id>https://SCP-EEE.github.io/hello-markdown.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-12-27T20:33:00Z</updated><link href="https://SCP-EEE.github.io/hello-markdown.html" rel="alternate" /><summary type="html">&lt;h1&gt;wikiっぽいのを作成するための準備&lt;/h1&gt;&lt;p&gt;やっぱりwikiらしいものを作りたいってなったらmarkdownだよね。&lt;/p&gt;&lt;p&gt;ってことでやはりhauntさん。markdownに対応している。&lt;/p&gt;&lt;p&gt;ってことでmarkdownで書くtest。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;強調&lt;/strong&gt;もあってかなりナイス。&lt;/p&gt;&lt;p&gt;ここで例えばプログラミングの説明なんかも出来たら面白そうだなって思ってます。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;# scheme fibonacci
-(define (fib x) (if (&amp;lt; x 2) x (+ (fib (- x 1)) (fib (- x 2)))))&lt;/code&gt;&lt;/pre&gt;</summary></entry><entry><title>Hello, world!</title><id>https://SCP-EEE.github.io/hello-world.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-12-27T14:34:37Z</updated><link href="https://SCP-EEE.github.io/hello-world.html" rel="alternate" /><summary type="html">&lt;h2&gt;はじめまして&lt;/h2&gt;&lt;p&gt;ここは、私の作品を解説する場所です。&lt;/p&gt;&lt;p&gt;もうひとつの初めましてと同様ただのサンプルです。&lt;/p&gt;&lt;p&gt;30フィボナッチ数列だーーー!&lt;/p&gt;&lt;p&gt;(0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229)&lt;/p&gt;&lt;p&gt;私の姿?いちようこんなの書いてたよ。&lt;/p&gt;&lt;img src=&quot;/images/scp-eee.jpg&quot; /&gt;</summary></entry><entry><title>町だとか</title><id>https://SCP-EEE.github.io/町だとか.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-12-22T10:53:00Z</updated><link href="https://SCP-EEE.github.io/町だとか.html" rel="alternate" /><summary type="html">&lt;figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>ようこそ</title><id>https://SCP-EEE.github.io/feed.xml</id><subtitle>Recent Posts</subtitle><updated>2022-01-04T06:32:46Z</updated><link href="SCP-EEE.github.io/feed.xml" rel="self" /><link href="SCP-EEE.github.io" /><entry><title>小春六花を買いました。</title><id>https://SCP-EEE.github.io/小春六花を買いました.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2022-01-04T15:28:00Z</updated><link href="https://SCP-EEE.github.io/小春六花を買いました.html" rel="alternate" /><summary type="html">&lt;h3&gt;
+CevioAIトークボイス小春六花を購入しました!!!
+&lt;/h3&gt;&lt;p&gt;
+いやあ、可愛いね。
+&lt;/p&gt;&lt;p&gt;
+はい、それだけです。
+&lt;/p&gt;&lt;p&gt;
+なにかこれで出来ればいいけど‥まあ考えときます。
+&lt;/p&gt;</summary></entry><entry><title>Hello, world!</title><id>https://SCP-EEE.github.io/hello-world.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2022-01-04T06:32:46Z</updated><link href="https://SCP-EEE.github.io/hello-world.html" rel="alternate" /><summary type="html">&lt;h2&gt;はじめまして&lt;/h2&gt;&lt;p&gt;ここは、私の作品を解説する場所です。&lt;/p&gt;&lt;p&gt;もうひとつの初めましてと同様ただのサンプルです。&lt;/p&gt;&lt;p&gt;30フィボナッチ数列だーーー!&lt;/p&gt;&lt;p&gt;(0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229)&lt;/p&gt;&lt;p&gt;私の姿?いちようこんなの書いてたよ。&lt;/p&gt;&lt;img src=&quot;/images/scp-eee.jpg&quot; /&gt;</summary></entry><entry><title>Hello, markdown!</title><id>https://SCP-EEE.github.io/hello-markdown.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-12-27T20:33:00Z</updated><link href="https://SCP-EEE.github.io/hello-markdown.html" rel="alternate" /><summary type="html">&lt;h1&gt;wikiっぽいのを作成するための準備&lt;/h1&gt;&lt;p&gt;やっぱりwikiらしいものを作りたいってなったらmarkdownだよね。&lt;/p&gt;&lt;p&gt;ってことでやはりhauntさん。markdownに対応している。&lt;/p&gt;&lt;p&gt;ってことでmarkdownで書くtest。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;強調&lt;/strong&gt;もあってかなりナイス。&lt;/p&gt;&lt;p&gt;ここで例えばプログラミングの説明なんかも出来たら面白そうだなって思ってます。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;# scheme fibonacci
+(define (fib x) (if (&amp;lt; x 2) x (+ (fib (- x 1)) (fib (- x 2)))))&lt;/code&gt;&lt;/pre&gt;</summary></entry><entry><title>町だとか</title><id>https://SCP-EEE.github.io/町だとか.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2021-12-22T10:53:00Z</updated><link href="https://SCP-EEE.github.io/町だとか.html" rel="alternate" /><summary type="html">&lt;figure&gt;
   &lt;figcaption&gt;&lt;/figcaption&gt;
   &lt;audio src=&quot;audio/town.ogg&quot;&gt;
   &lt;/audio&gt;
@@ -24,6 +32,9 @@
 &lt;/p&gt;&lt;p&gt;
   ということでこのサイトの根幹技術についての説明でした。
 &lt;/p&gt;</summary></entry><entry><title>初めまして</title><id>https://SCP-EEE.github.io/初めまして.html</id><author><name>SCP-EEE</name><email>scpeee@wail.ch</email></author><updated>2020-08-31T10:48:00Z</updated><link href="https://SCP-EEE.github.io/初めまして.html" rel="alternate" /><summary type="html">&lt;p&gt;
-  ここはいちようbolgらしいです。見たい人は見てください。
+  ここはいちようbolgらしいです。
+&lt;/p&gt;&lt;p&gt;
+見たい人は見てください。
+&lt;/p&gt;&lt;p&gt;
   いろんなことを説明してますが。意味はありません。
 &lt;/p&gt;</summary></entry></feed>
