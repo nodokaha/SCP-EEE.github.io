@@ -225,9 +225,12 @@
     (display "(python): python使いとは戦争です。使いますけど…。")
     (display "(todo): やりたいことはちゃんと文字にしておくもんです")
     (display "(つまんない): 言いたいことは分かります。")
+    (display "(donate): お金くれるんですか？！")
     (display "(music-play): bgmっぽいのが再生されます。癒されて下さい。")
     (display "(music-pause): うるさいから止めるんですね…ひとでなし！")
     (display "(help): これです。")))
+
+(define (donate) (display "すみません。\n受け取りかたがまだ分からなくて…"))
 
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 
