@@ -25,6 +25,7 @@
 (define (music-pause) (js-invoke music "pause"))
 (define canvas (js-eval "document.getElementById('canvas')"))
 (define ctx (js-invoke canvas "getContext" "2d"))
+(define webdb (js-eval "window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;")) 
 (define webdbtran (js-eval "window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction || {READ_WRITE: 'readwrite'};"))
 (define webdbkey (js-eval "window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;"))
 (define dbrequest (js-invoke webdb "open" "Test" 3))
