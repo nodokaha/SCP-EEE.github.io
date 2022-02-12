@@ -241,7 +241,7 @@
 
 
 ;; ここから本編
-(element-hide! (js-eval "rendrer.domElement"))
+(element-hide! (js-eval "renderer.domElement"))
 (element-hide! (js-eval "canvas"))
 
 (display helloworld)
