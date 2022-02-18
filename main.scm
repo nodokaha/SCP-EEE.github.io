@@ -242,7 +242,7 @@
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
 
 ;; ここから本編
-(element-hide! (js-eval "renderer.domElement"))
+;;(element-hide! (js-eval "renderer.domElement"))
 (element-hide! (js-eval "canvas"))
 
 (display helloworld)
