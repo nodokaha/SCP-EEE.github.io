@@ -220,6 +220,8 @@
 
 (define (つまんない) (begin (display "まあまあ、CUIだし、テキストは味気ない。") (display "色の工夫だってAAだってない") (display "複雑なインターフェイスも持たない") (display "でもこれはコンピューターの本質だと思ってます") (display "そこにあるのは文字や情報、ちょっとの対話だけ") (display "あなたはそれでどんなことが出来ますか？") (display "今だって変わりませんよ") (display "表現は違うけどね。")))
 
+(define (toggle-canvas) (begin (element-toggle! (js-eval "canvas")) (js-set! canvas "width" (element-width (js-eval "term")))))
+
 (define (help)
   (begin
     (display "blog: ブログサイトのURIを出力します。するだけです。")
@@ -238,7 +240,6 @@
 (define (donate) (display "すみません。\n受け取りかたがまだ分からなくて…"))
 
 (define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
-
 
 ;; ここから本編
 (element-hide! (js-eval "renderer.domElement"))
