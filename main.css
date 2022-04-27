@@ -1,1 +1,1 @@
-@font-face{font-family:'unifont';src:url('unifont.ttf');}
+.terminal { font-family:'unifont'; font-size: calc(var(--1,1)*20px); line-height: calc(var(--1,1))*20px}
