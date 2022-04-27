@@ -93,7 +93,7 @@
 
 (define blog "https://SCP-EEE.github.io/blog.html")
 (define soundcloud "https://soundcloud.com/rx220mt")
-(define pixiv "https://www.pixiv.net/users/54386498"
+(define pixiv "https://www.pixiv.net/users/54386498")
 (define twitter "https://twitter.com/scp_eee")
 
 (define (talk)
@@ -114,6 +114,7 @@
 		       "ごめんなさい。\n…作者に言わされてるだけです。"
 		       "またですか？はたまた。\nおもしろいギャクですよね？ね？"
 		       "あまり複雑な文章を問い掛けたりしないでくださいね？"
+		       "うん、うん…\n…は！？寝てませんよ！"
 		       "…"
 		       "…(困惑"
 		       "…(歓喜"
@@ -247,7 +248,7 @@
 
 (define (donate) (display "すみません。\n受け取りかたがまだ分からなくて…"))
 
-(define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？")
+(define helloworld "こんにちは世界\nこの手紙はあなたに見えているでしょうか？\n(「はい」か「いいえ」もしくは…\n  自由記述でどうぞ")
 
 ;; ここから本編
 ;;(element-hide! (js-eval "renderer.domElement"))
