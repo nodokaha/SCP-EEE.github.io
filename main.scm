@@ -92,6 +92,9 @@
             (begin (display "Error") (user-input))))))
 
 (define blog "https://SCP-EEE.github.io/blog.html")
+(define soundcloud "https://soundcloud.com/rx220mt")
+(define pixiv "https://www.pixiv.net/users/54386498"
+(define twitter "https://twitter.com/scp_eee")
 
 (define (talk)
   (let ((about-me '("私のことはいいでしょう。\n貴方について教えてください。"
@@ -226,7 +229,10 @@
 
 (define (help)
   (begin
-    (display "blog: ブログサイトのURIを出力します。するだけです。")
+    (display "\"blog\": ブログサイトのURIを出力します。するだけです。")
+    (display "\"soundcloud\": soundcloudの私のページを出力します。更新多め。")
+    (display "\"pixiv\": 一様pixivで創作活動を行ってます。")
+    (display "\"twitter\": 最近復活しました。用途未定。")
     (display "\"(tictactoe)\": 良かったですね。○×ゲームで遊べますよ。さらに独り用です。\n(まだ開発中ですけど)\n")
     (display "\"(talk)\": 私と話すことが出来ます。…すぐ飽きますよ。")
     (display "\"(trpg)\": テキストロールプレイングゲームです。SF系です。")
