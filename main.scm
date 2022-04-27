@@ -81,7 +81,9 @@
     "大丈夫ですか？\n…時々、言いたくなるだけです。"
     "迷えなくなるほど。\nそれほど、辛くなったら。\nいや、…解決策はここにはありません。\n時間潰しでもしてください。"
     "私はだれ？答えはつまり…"
-    "この文章を全パターン見ようなんて\n思わないでくださいね？\nstart-textって打てば見れるんですから"))
+    "この文章を全パターン見ようなんて\n思わないでくださいね？\nstart-textって打てば見れるんですから"
+    "ここをどこで知りました？\nまあ、どこから知ったとしてもいいんですけども"
+    "実は私は結構いろんなところにいます。\nhttps://soundcloud.com/rx220mt\nhttps://www.pixiv.net/users/54386498\nなんかに居たりします。"))
 
 (define (user-input) 
   (let ((msg (read (current-input-port)))) 
@@ -225,7 +227,7 @@
 (define (help)
   (begin
     (display "blog: ブログサイトのURIを出力します。するだけです。")
-    (display "\"(tictactoe)\": 良かったですね。○×ゲームで遊べますよ。さらに独り用です。(まだ開発中ですけど)")
+    (display "\"(tictactoe)\": 良かったですね。○×ゲームで遊べますよ。さらに独り用です。\n(まだ開発中ですけど)\n")
     (display "\"(talk)\": 私と話すことが出来ます。…すぐ飽きますよ。")
     (display "\"(trpg)\": テキストロールプレイングゲームです。SF系です。")
     (display "\"(date)\": いや(current-date)使いましょうよ？")
@@ -243,7 +245,7 @@
 
 ;; ここから本編
 ;;(element-hide! (js-eval "renderer.domElement"))
-(element-hide! (js-eval "canvas"))
+;;(element-hide! (js-eval "canvas"))
 
 (display helloworld)
 
