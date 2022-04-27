@@ -113,7 +113,7 @@ td {
 }
 
 #term {
-  width: 500px;
+  width: auto;
 }
 /* Mobile View */
 @media (max-width: 800px) {
