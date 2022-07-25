@@ -2,4 +2,4 @@
 
 SCPEEE's Research Reserve Report Site.
 
-[https://SCP-EEE.github.io](https://SCP-EEE.github.io)
+[https://nodokaha.github.io/SCP-EEE.github.io.html](https://nodokaha.github.io/SCP-EEE.github.io.html)
